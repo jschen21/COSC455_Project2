@@ -43,11 +43,11 @@ def duplicateChecker(aList: List[Int]): List[Int] =
 twinprimeslist(50)
 twinprimeslist(100)
 
-def goldbach(i : Int) =
+def goldbach(i : Int): Unit =
   i match{
-    case i if i <= 2 => println(i + " must be greater than 2")
-    case (i) if i % 2 == 1 => println(i + " must be an even number")
-    case (i) if i % 2 == 0 =>
+    case `i` if i <= 2 => println("Must be greater than 2")
+    case `i` if i % 2 == 1 => println("Must be an even number")
+    case `i` if i % 2 == 0 =>
       var j = 1
       goldbachhelper(i, j)
   }
@@ -56,7 +56,7 @@ def goldbachhelper(i : Int, j : Int): Unit = {
   var num1 = i
   var num2 = j
   j match{
-    case j if(prime(i - j) && prime(j)) => println(j + " + " + (i - j) + " = " + i)
+    case `j` if prime(i - j) && prime(j) => println(j + " + " + (i - j) + " = " + i)
     case _ => goldbachhelper(num1, num2+1)
   }
 }
