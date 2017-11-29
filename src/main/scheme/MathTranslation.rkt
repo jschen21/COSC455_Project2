@@ -3,7 +3,7 @@
 (define english '(zero one two three four five six seven eight nine ten))
 
 (define (go alist)
-  (display "Translation: ")(display (convert alist))(newline)
+  (display "Translation: ")(showlist (convert alist))(newline)
   (display "Addition: ") (showplus (convert alist))(display " = ")(display (sum (convert alist)))(newline)
   (display "Multiplication: ")(showmulti (convert alist))(display " = ")(display (product (convert alist)))(newline))
 
@@ -36,6 +36,10 @@
 (define (showmulti alist)
  (display (car alist))
   (map (lambda (x) (display " * ")(display x)) (cdr alist)))
+
+(define (showlist alist)
+ (display (car alist))
+  (map (lambda (x) (display " ")(display x)) (cdr alist)))
   
 
 (go '(yi nine six ba))
